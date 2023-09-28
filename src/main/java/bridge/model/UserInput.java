@@ -7,7 +7,7 @@ public class UserInput {
     public int inputLength() {
         ValidateInput validateInput = new ValidateInput();
         String input = Console.readLine();
-        while (validateInput.validateLength(input)) {
+        while (!validateInput.validateLength(input)) {
             input = Console.readLine();
         }
         return validateInput.integerParsing(input);
