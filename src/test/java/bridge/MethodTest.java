@@ -9,7 +9,7 @@ public class MethodTest {
 
     @Test
     void 잘못된_값이_입력되면_True() {
-        boolean b = new ValidateInput().validateUserInput("a");
+        boolean b = new ValidateInput().validateLength("a");
         assertThat(b).isTrue();
     }
 
