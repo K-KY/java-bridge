@@ -6,12 +6,16 @@ public class ValidateInput {
     public boolean validateLength(String userInput) {
         //try 에서 예외가 나오지 않으면 false 를 리턴한다.
         try{
-            integerParsing(userInput);
-            return false;
+            int n = integerParsing(userInput);
+            return validateRange(n);
         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return true;
+        return false;
+    }
+
+    private boolean validateRange(int n) {
+        return n > 0;
     }
 
     public int integerParsing(String userInput) {
