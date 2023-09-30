@@ -1,5 +1,6 @@
 package bridge;
 
+import bridge.model.Commend;
 import bridge.model.bridgenumber.BridgeMap;
 import bridge.model.bridgenumber.RandomBridgeNumber;
 import bridge.model.validator.ValidateInput;
@@ -52,6 +53,22 @@ public class MethodTest {
             assertThat(number).isIn(0,1);
         }
 
+    }
+    @Test
+    @DisplayName("지정된 문자가 아니라면 false를 리턴")
+    void 지정된_문자인지_확인() {
+        ValidateInput validateInput = new ValidateInput();
+        assertThat(validateInput.validateDirection("a")).isFalse();
+        assertThat(validateInput.validateDirection("u")).isTrue();
+        assertThat(validateInput.validateDirection("d")).isTrue();
+    }
+
+    @Test
+    @DisplayName("입력된 문자의 key를 리턴한다")
+    void enum_에_입력된_문자의_key를_리턴() {
+        ValidateInput validateInput = new ValidateInput();
+        assertThat(validateInput.getDirectionKey(Commend.commend("U"))).isIn(1);
+        assertThat(validateInput.getDirectionKey(Commend.commend("D"))).isIn(0);
     }
 
 
