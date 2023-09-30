@@ -1,5 +1,6 @@
 package bridge.model;
 
+import bridge.view.ErrorMessage;
 
 public enum Commend {
     UP(1, "U"), DOWN(0, "D");
@@ -9,13 +10,18 @@ public enum Commend {
         this.key = key;
         this.cmd = cmd;
     }
-    public String getCmd() {
-        return cmd;
-    }
 
     public int getKey() {
         return key;
     }
 
+    public static Commend commend(String direction) {
+        for (int i = 0; i < values().length; i++) {
+            if (direction.equals(values()[i].cmd)) {
+                return values()[i];
+            }
+        }
+        throw new IllegalArgumentException(ErrorMessage.ERROR_NOT_CORRECT.getMessage());
+    }
 
 }
