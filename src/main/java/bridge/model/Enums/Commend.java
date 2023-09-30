@@ -1,6 +1,4 @@
-package bridge.model;
-
-import bridge.view.ErrorMessage;
+package bridge.model.Enums;
 
 public enum Commend {
     UP(1, "U"), DOWN(0, "D");

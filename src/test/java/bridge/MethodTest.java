@@ -1,6 +1,6 @@
 package bridge;
 
-import bridge.model.Commend;
+import bridge.model.Enums.Commend;
 import bridge.model.bridgenumber.BridgeMap;
 import bridge.model.bridgenumber.RandomBridgeNumber;
 import bridge.model.validator.ValidateInput;

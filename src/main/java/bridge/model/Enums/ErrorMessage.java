@@ -1,4 +1,4 @@
-package bridge.view;
+package bridge.model.Enums;
 
 public enum ErrorMessage {
     ERROR_NOT_CORRECT("[ERROR] 올바른 입력이 아닙니다");

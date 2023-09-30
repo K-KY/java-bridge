@@ -1,7 +1,7 @@
 package bridge.model.validator;
 
-import bridge.model.Commend;
-import bridge.view.ErrorMessage;
+import bridge.model.Enums.Commend;
+import bridge.model.Enums.ErrorMessage;
 
 public class ValidateInput {
     public boolean validateLength(String bridgeLength) {

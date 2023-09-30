@@ -1,5 +1,6 @@
 package bridge.model;
 
+import bridge.model.Enums.Commend;
 import bridge.model.validator.ValidateInput;
 import camp.nextstep.edu.missionutils.Console;
 
