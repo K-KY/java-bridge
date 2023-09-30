@@ -11,4 +11,11 @@ public class UserInput {
         }
         return validateInput.integerParsing(input);
     }
+    public int inputDirection(ValidateInput validateInput) {
+        String input = Console.readLine().toUpperCase();
+        while (!validateInput.validateDirection(input)) {
+            input = Console.readLine().toUpperCase();
+        }
+        return validateInput.getDirectionKey(Commend.commend(input));
+    }
 }
