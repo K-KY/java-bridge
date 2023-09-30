@@ -70,6 +70,12 @@ public class MethodTest {
         assertThat(validateInput.getDirectionKey(Commend.commend("U"))).isIn(1);
         assertThat(validateInput.getDirectionKey(Commend.commend("D"))).isIn(0);
     }
+    @Test
+    @DisplayName("올바르지 않은 문자를 입력하면 예외")
+    void enum_예외_테스트() {
+        assertThatThrownBy(() -> Commend.commend("a"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 
 
 }
