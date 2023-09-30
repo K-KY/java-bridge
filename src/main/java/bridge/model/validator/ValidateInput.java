@@ -1,5 +1,6 @@
 package bridge.model.validator;
 
+import bridge.model.Commend;
 import bridge.view.ErrorMessage;
 
 public class ValidateInput {
@@ -28,6 +29,20 @@ public class ValidateInput {
             throw new IllegalArgumentException(ErrorMessage.ERROR_NOT_CORRECT.getMessage());
         }
         return Integer.parseInt(bridgeLength);
+    }
+
+    public boolean validateDirection(String direction) {
+        try {
+            getDirectionKey(Commend.commend(direction.toUpperCase()));
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public int getDirectionKey(Commend commend) {
+        return commend.getKey();
     }
 
 }
