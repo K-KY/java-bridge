@@ -18,6 +18,7 @@ public class BridgeGame {
     BridgeMap bridgeMap;
     BridgeBuilder bridgeBuilder = new BridgeBuilder(new HashMap<>());
     int trial = 1;
+
     /**
      * 사용자가 칸을 이동할 때 사용하는 메서드
      * <p>
@@ -57,17 +58,23 @@ public class BridgeGame {
             new SystemMessage().gameResult(hash, trial);
         }
     }
+
     public void gameStart() {
         new SystemMessage().start();
         int length = new UserInput().inputLength(new ValidateInput());
+        int current = 0;
         bridgeMap = new RandomBridgeNumber(length).bridgeNumberList();
-        for (int i = 0; i < bridgeMap.size(); i++) {
-            System.out.println(bridgeMap.find(i));
-        }
-        while(bridgeMap.size() > 0) {
+        while (bridgeMap.size() > 0) {
             move(bridgeBuilder);
+            current++;
         }
-        new SystemMessage().gameResult(bridgeBuilder, trial);
+        printResult(length, current);
+    }
 
+    private void printResult(int length, int current) {
+        if (length == current) {
+
+            new SystemMessage().gameResult(bridgeBuilder, trial);
+        }
     }
 }
