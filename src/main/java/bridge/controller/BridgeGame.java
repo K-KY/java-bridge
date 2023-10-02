@@ -73,7 +73,6 @@ public class BridgeGame {
 
     private void printResult(int length, int current) {
         if (length == current) {
-
             new SystemMessage().gameResult(bridgeBuilder, trial);
         }
     }

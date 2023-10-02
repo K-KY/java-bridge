@@ -6,20 +6,20 @@ import bridge.model.Enums.ErrorMessage;
 public class ValidateInput {
     public boolean validateLength(String bridgeLength) {
         //try 에서 예외가 나오지 않으면 false 를 리턴한다.
-        try{
+        try {
             int n = integerParsing(bridgeLength);
             return validateRange(n);
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return false;
     }
 
     private boolean validateRange(int n) {
-        if (n <= 0) {
-            throw new IllegalArgumentException(ErrorMessage.ERROR_NOT_CORRECT.getMessage());
+        if (n >= 3 && n <= 20) {
+            return true;
         }
-        return true;
+        throw new IllegalArgumentException(ErrorMessage.ERROR_NOT_CORRECT.getMessage());
     }
 
     public int integerParsing(String bridgeLength) {
@@ -40,6 +40,7 @@ public class ValidateInput {
         }
         return false;
     }
+
     public boolean validateRetry(String commend) {
         try {
             checkCommend(commend);
@@ -49,8 +50,9 @@ public class ValidateInput {
         }
         return false;
     }
+
     private void checkCommend(String commend) {
-        if (commend.equals("R") || commend.equals("Q")){
+        if (commend.equals("R") || commend.equals("Q")) {
             return;
         }
         throw new IllegalArgumentException(ErrorMessage.ERROR_NOT_CORRECT.getMessage());
