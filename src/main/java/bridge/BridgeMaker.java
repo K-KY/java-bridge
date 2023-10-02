@@ -1,12 +1,7 @@
 package bridge;
 
-import bridge.model.Enums.Commend;
-import bridge.model.bridgenumber.BridgeMap;
-import bridge.model.bridgenumber.RandomBridgeNumber;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -42,25 +37,4 @@ public class BridgeMaker {
 
         return "";
     }
-
-    /*
- 다리의 출력 형식은 "[" + up + "]\n" + "[" + down + "]"
- 다리의 길이가 늘어날 때마다 up = up + "|   ", down = down + "|   "
- 입력에 따라 공백의 중간에는 o 또는 x 가 들어간다.
-
-         StringBuilder up = new StringBuilder("   ");
-        StringBuilder down = new StringBuilder("   ");
-        List<String> bridge = new ArrayList<>();
-        String bridgePartUP;
-        String bridgePartDown;
-        for (int i = 1; i < size; i++) {
-            up.append("|   ");
-            down.append("|   ");
-        }
-        bridgePartUP = "[" + up +"]";
-        bridgePartDown = "\n[" + down +"]";
-        bridge.add(bridgePartUP + bridgePartDown);
-        return bridge;
-
-*/
 }
