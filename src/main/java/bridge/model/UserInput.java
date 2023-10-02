@@ -19,4 +19,12 @@ public class UserInput {
         }
         return validateInput.getDirectionKey(Commend.commend(input));
     }
+
+    public String inputRetry(ValidateInput validateInput) {
+        String input = Console.readLine().toUpperCase();
+        while (!validateInput.validateRetry(input)) {
+            input = Console.readLine().toUpperCase();
+        }
+        return input;
+    }
 }

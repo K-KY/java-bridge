@@ -40,6 +40,21 @@ public class ValidateInput {
         }
         return false;
     }
+    public boolean validateRetry(String commend) {
+        try {
+            checkCommend(commend);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    private void checkCommend(String commend) {
+        if (commend.equals("R") || commend.equals("Q")){
+            return;
+        }
+        throw new IllegalArgumentException(ErrorMessage.ERROR_NOT_CORRECT.getMessage());
+    }
 
     public int getDirectionKey(Commend commend) {
         return commend.getKey();

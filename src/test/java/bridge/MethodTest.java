@@ -1,11 +1,15 @@
 package bridge;
 
+import bridge.model.BridgeBuilder;
 import bridge.model.Enums.Commend;
 import bridge.model.bridgenumber.BridgeMap;
 import bridge.model.bridgenumber.RandomBridgeNumber;
 import bridge.model.validator.ValidateInput;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -49,7 +53,7 @@ public class MethodTest {
         RandomBridgeNumber randomBridgeNumber = new RandomBridgeNumber(3);
         BridgeMap list = randomBridgeNumber.bridgeNumberList();
         for (int i = 0; i < list.size(); i++) {
-            int number = list.delete().getNumbers();
+            int number = list.delete();
             assertThat(number).isIn(0,1);
         }
 
@@ -76,6 +80,15 @@ public class MethodTest {
         assertThatThrownBy(() -> Commend.commend("a"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+    @Test
+    void bridgeMakerTest() {
+        BridgeMaker bridgeMaker = new BridgeMaker(new BridgeRandomNumberGenerator());
+        List<String> b = bridgeMaker.makeBridge(3);
+        for (int i = 0; i < b.size(); i++) {
+            System.out.println(b.get(i));
+        }
+    }
+
 
 
 }
